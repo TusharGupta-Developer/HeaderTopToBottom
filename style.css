@@ -201,7 +201,7 @@ img {
     /* CSS rules here */
     .nav__menu {
         position: fixed;
-        top: -28%;
+        top: -29%;
         right: 0%;
         background-color: var(--container-color);
         /* backdrop-filter: blur(16px); */
