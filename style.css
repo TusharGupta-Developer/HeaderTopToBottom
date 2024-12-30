@@ -262,12 +262,13 @@ img {
 
 .menu__button{
     background-color: var(--first-color);
-    padding: .2rem 7.9rem;
+    padding: .4rem 8.2rem;
     border-radius: 6px;
     color: var(--title-color);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: smaller;
 }
 
 .menu__but{
