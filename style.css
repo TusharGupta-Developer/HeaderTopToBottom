@@ -163,6 +163,8 @@ img {
     color:#e7e7e7;
     font-weight: var(--font-bold);
     /* z-index: var(--z-fixed); */
+    font-size: x-large;
+    font-weight: var(--font-regular);
 
 }
 
@@ -240,7 +242,7 @@ img {
 
 /* Show menu */
 .show-menu {
-    top: 6%;
+    top: 8%;
 }
 
 /* Active Link */
@@ -260,9 +262,12 @@ img {
 
 .menu__button{
     background-color: var(--first-color);
-    padding: .4rem 9rem;
-    border-radius: 10px;
+    padding: .2rem 7.9rem;
+    border-radius: 6px;
     color: var(--title-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu__but{
