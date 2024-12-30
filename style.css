@@ -220,6 +220,7 @@ img {
     flex-direction: column;
     /* row-gap: 3rem; */
     row-gap: 1.5rem;
+    background-color: var(--container-color);
 }
 
 .nav__link {
