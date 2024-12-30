@@ -209,7 +209,7 @@ img {
         width: 100%;
         height: 31%;
         padding: 1rem 1.5rem;
-        transition: top ease-in .4s;
+        transition: top ease-in-out .6s;
         /* z-index: 10; */
     }
 
