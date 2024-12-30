@@ -13,10 +13,10 @@ if (navToggle) {
 
         if (isMenuVisible) {
             navMenu.classList.remove("show-menu"); // Hide menu
-            navToggle.classList.remove("active"); // Reset toggle animation
+            navToggle.classList.add("active"); // Animate toggle to "X"
         } else {
             navMenu.classList.add("show-menu"); // Show menu
-            navToggle.classList.add("active"); // Animate toggle to "X"
+            navToggle.classList.remove("active"); // Reset toggle animation
         }
     });
 }
