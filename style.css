@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1, h2 {
+  font-weight: 600; /* Bold */
+}
+
+p {
+  font-weight: 300; /* Light */
+}
+
 :root {
     /* Header */
     --header-height: 3.5rem;
