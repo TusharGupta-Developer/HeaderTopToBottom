@@ -1,0 +1,306 @@
+:root {
+    /* Header */
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    --hue: 245; /* Base hue for color palette */
+
+    --first-color: #ff4533; /* Primary color (Button color) */
+    --first-color-light: #ff6b57; /* Slightly lighter variant of the button */
+    --first-color-alt: #e03f2d; /* Alternate primary color */
+    --title-color: #ffffff; /* Color for headings/titles (lighter text) */
+    --text-color: #0b0b0b; /* Main text color */
+    --text-color-light: #070708; /* Lighter text color */
+    --body-color: #0a0a0a; /* Background color */
+    --container-color: #0b0a0a; /* Section container background */
+
+    /*========== Font and typography ==========*/
+    /* .5rem = 8px | 1rem = 16px ... */
+    --body-font: "Syne", sans-serif;
+    --biggest-font-size: 3rem;
+    --big-font-size: 1.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 5.5rem;
+        --big-font-size: 2.75rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1.125rem;
+        --small-font-size: .875rem;
+    }
+}
+
+
+/*=============== BASE ===============*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background-color: hsl(14, 55%, 55%); */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+input,
+textarea,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+
+}
+
+input,
+button,
+textarea {
+    border: none;
+    outline: none;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    padding-block: 5rem 2rem;
+}
+
+.section__title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-bold);
+    margin-bottom: 2rem;
+}
+
+.main {
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    /* background-color: transparent; */
+    background-color: var(--container-color);
+    z-index: var(--z-fixed);
+    /* padding: 0 1rem; */
+
+}
+
+
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .container {
+    max-width: 1120px;  
+    already in Reusable css classes
+    margin-inline: 1.5rem;
+} */
+
+.nav__logo {
+    color:#e7e7e7;
+    font-weight: var(--font-bold);
+    /* z-index: var(--z-fixed); */
+
+}
+
+.nav__toggle,
+.nav__close {
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.nav__menu {
+    width: 40%;
+}
+
+/* Navigation for mobile devices */
+
+@media screen and (max-width: 1150px) {
+
+    /* CSS rules here */
+    .nav__menu {
+        position: fixed;
+        top: -31%;
+        right: 0%;
+        background-color: var(--container-color);
+        /* backdrop-filter: blur(16px); */
+        /* --webkit-backdrop-filter: blur(16px); */
+        width: 100%;
+        height: 32%;
+        padding: 1rem 1.5rem;
+        transition: top ease-in .6s;
+        /* z-index: 10; */
+    }
+
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    /* row-gap: 3rem; */
+    row-gap: 1.5rem;
+}
+
+.nav__link {
+    position: relative;
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s;
+}
+
+.nav__link::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--first-color-light);
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    transition: width .3s;
+
+}
+
+.nav__link:hover {
+    color: var(--first-color-light);
+}
+
+.nav__link:hover::after {
+    width: 30%;
+}
+
+.nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.15rem;
+}
+
+/* Show menu */
+.show-menu {
+    top: 6%;
+}
+
+/* Active Link */
+
+.active-link {
+    color: var(--first-color-light);
+}
+
+.active-link::after {
+    width: 30%;
+}
+
+
+.main {
+    overflow: hidden;
+}
+
+.menu__button{
+    background-color: var(--first-color);
+    padding: .4rem 9rem;
+    border-radius: 10px;
+    color: var(--title-color);
+}
+
+.menu__but{
+    display: flex;
+    justify-content: center;
+}
+
+/* Toggle button */
+.nav__toggle {
+    width: 30px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav__toggle .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--title-color);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animation for "X" (close button) */
+.nav__toggle.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.nav__toggle.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__toggle.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Menu styling */
+
